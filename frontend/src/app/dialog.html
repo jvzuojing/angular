@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>{{data.title}}</h1>
+<div mat-dialog-content>
+    <mat-form-field *ngFor="let row of data.list" appearance="fill">
+        <input matInput placeholder="Placeholder" [(ngModel)]="row.value">
+        <mat-hint>{{row.key}}</mat-hint>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">No Thanks</button>
+    <button mat-button [mat-dialog-close]="data.list" cdkFocusInitial>Ok</button>
+</div>
